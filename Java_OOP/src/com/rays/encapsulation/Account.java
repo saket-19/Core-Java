@@ -23,5 +23,21 @@ public class Account {
 	public Double getBalance() {
 		return balance;
 	}
+	public void deposit(double amount) {
+		balance=balance+amount;
+		System.out.println(balance);
+		
+	}
+	public void withdrawl(double amount) {
+		if(balance>amount) {
+			balance=balance-amount;
+			System.out.println(balance);
+			
+		}
+		else {
+			System.err.println("Insufficient Balance !");
+		}
+		
+	}
 
 }

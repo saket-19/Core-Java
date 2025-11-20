@@ -45,6 +45,7 @@ public class Automobile {
 				speed=speed+5;
 				
 			}
+			
 			System.out.println(speed);
 			
 		}

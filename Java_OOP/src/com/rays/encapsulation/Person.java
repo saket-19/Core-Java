@@ -31,4 +31,12 @@ public class Person {
 		this.address = address;
 	}
 
+	public int getAge(Date dob) {
+		Date now = new Date();
+
+		int age = now.getYear() - dob.getYear();
+
+		return age;
+	}
+
 }

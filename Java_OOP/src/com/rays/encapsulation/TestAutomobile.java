@@ -16,6 +16,11 @@ public class TestAutomobile {
 		System.out.println("Speed is : ");
 
 		au.Break();
+		System.out.println(au.changeGear(3));
+		au.Break();
+		
+		
+		
 	}
 
 }
