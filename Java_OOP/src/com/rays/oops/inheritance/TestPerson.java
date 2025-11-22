@@ -14,7 +14,7 @@ public class TestPerson {
 		b.setDateOfBirth(sdf.parse("2002-02-02"));
 		System.out.println(b.getName());
 		System.out.println(b.getIncome());
-		System.out.println(b.getDateOfBirth());
+		System.out.println(sdf.format(b.getDateOfBirth()));
 		System.out.println();
 		System.out.println("-------------");
 		
@@ -27,7 +27,7 @@ public class TestPerson {
 		System.out.println(d.getName());
 		System.out.println(d.getRegistrationNo());
 		System.out.println(d.getAddress());
-		System.out.print(d.getDateOfBirth());
+		System.out.print(sdf.format(d.getDateOfBirth()));
 		System.out.println();
 		System.out.println("-------------");
 		
