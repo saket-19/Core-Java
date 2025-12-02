@@ -1,0 +1,10 @@
+package com.rays.exceptionhandling;
+
+public class InsufficientFundException extends RuntimeException {
+	
+		public InsufficientFundException() {
+			super("Insufficient fund transfer");
+		}
+	
+
+}
