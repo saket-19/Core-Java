@@ -13,7 +13,6 @@ public class EnumerationVector {
 		System.out.println("-----------------");
 		
 		Enumeration e=v.elements();
-		v.add(1);
 		while(e.hasMoreElements()) {
 			Object o=e.nextElement();
 			System.out.println(o);
