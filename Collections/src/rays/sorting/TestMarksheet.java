@@ -19,6 +19,9 @@ public class TestMarksheet {
 		for(Object o:list) {
 			System.out.println(o);
 		}
+		System.out.println("List after sorting is : ");
+		Collections.sort(list);
+		list.forEach(System.out::println);
 		
 		
 			

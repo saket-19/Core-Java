@@ -1,7 +1,7 @@
 package rays.sorting;
 import java.util.*;
 
-public class Marksheet {
+public class Marksheet implements Comparable<Marksheet> {
 	private String rollno;
 	private String name;
 	private int physics;
@@ -16,8 +16,16 @@ public class Marksheet {
 		this.chemistry=chemistry;
 		
 	}
+	
+	@Override
+	public int compareTo(Marksheet o) {
+		
+		//return this.physics-o.physics;  for getting elements in asc oder with reference to physics
+		return this.name.compareTo(o.name);
+	}
+	
 	public String toString() {
-		return "rollno: " + rollno + " name: " + name + " physics: " + physics + "maths:" +maths +"chemistry:" +chemistry ;
+		return "rollno: " + rollno + " name:  " + name + " physics:  " + physics + "maths: " +maths +"chemistry: , " +chemistry ;
 	}
 
 	
