@@ -1,6 +1,6 @@
-package racing.threads;
+package RacingProblemSyncronised;
 
-public class Account {
+public class Account1 {
 	private int balance=0;
 
 	public int getBalance() {
@@ -22,7 +22,7 @@ public class Account {
 		}
 		this.balance = balance;
 	}
-	public void deposit(String name, int amt) {
+	public synchronized void deposit(String name, int amt) {
 
 		int total = getBalance() + amt;
 
