@@ -1,5 +1,7 @@
 package join.threads;
 
+//The join() method makes one thread wait until another thread finishes its execution.
+
 public class JoinThread extends Thread{
 	public String name;
 	
