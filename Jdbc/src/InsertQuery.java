@@ -13,7 +13,7 @@ public static void main(String[] args) throws ClassNotFoundException, SQLExcepti
 		
 		Statement stmt = conn.createStatement();
 		
-		int rows=stmt.executeUpdate("insert into marksheet values(17,117,'raghav',56,87,45)");
+		int rows=stmt.executeUpdate("insert into marksheet values(18,117,'ram',55,87,49)");
 		
 		System.out.println(rows+" rows affected");
 		

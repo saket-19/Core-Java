@@ -8,13 +8,15 @@ import java.sql.Statement;
 public class TestJdbc {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		
-		//Loader
+		//Load Driver
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		
+		// Make connection to the Database9
 		Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/people", "root", "root");
 		
+		// Create Statement
 		Statement stmt = conn.createStatement();
 		
+		// Execute query and get ResultSet
 		ResultSet rs=stmt.executeQuery("select * from marksheet;");
 		
 		System.out.println("connection succesfull");
