@@ -1,13 +1,16 @@
 package crud.prepared.statements;
 
 import java.sql.SQLException;
+import java.util.Iterator;
+import java.util.List;
 
 public class TestMarksheet {
 	public static void main(String[] args) throws Exception, SQLException {
 		//testAdd();
 	    //testUpdate();
 	    //testDelete();
-		testfindByRollno();
+		//testfindByRollno();
+		testSearch();
 	}
 	
 	public static void testAdd() throws ClassNotFoundException, SQLException {
@@ -50,7 +53,7 @@ public class TestMarksheet {
 		MarksheetModel model = new MarksheetModel();
 		MarksheetBean bean = new MarksheetBean();
 
-		bean=model.findByRollNo(1);
+		bean=model.findByRollNo(101);
 
 		if (bean == null) {
 			System.out.println("user not found");
@@ -66,5 +69,29 @@ public class TestMarksheet {
 			
 		}
 	}
+	public static void testSearch() throws ClassNotFoundException, SQLException {
+		
+			MarksheetModel model = new MarksheetModel();
+			MarksheetBean bean = new MarksheetBean();
 
-}
+			List list = model.search();
+		
+			
+			Iterator<MarksheetBean> it = list.iterator();
+			
+			while(it.hasNext()) {
+				bean = it.next();
+				System.out.println(bean.getId());
+				System.out.println(bean.getRollno());
+				System.out.println(bean.getName());
+				System.out.println(bean.getPhy());
+				System.out.println(bean.getChem());
+				System.out.println(bean.getMaths());
+				
+			}
+
+		}
+
+	}
+
+

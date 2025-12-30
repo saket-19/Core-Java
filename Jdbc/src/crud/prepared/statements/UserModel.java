@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserModel {
 	public void update(UserBean bean) throws ClassNotFoundException, SQLException {
@@ -65,6 +67,29 @@ public class UserModel {
 
 		return bean;
 
+	}
+	public List search() throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/people","root","root");
+		PreparedStatement pstmt=conn.prepareStatement("select * from st_user");
+		ResultSet rs=pstmt.executeQuery();
+		UserBean bean=null;
+		List list=new ArrayList();
+		
+		while(rs.next()) {
+			bean=new UserBean();
+			bean.setId(rs.getInt(1));
+			bean.setName(rs.getString(2));
+			bean.setLogin(rs.getString(3));
+			bean.setPassword(rs.getString(4));
+			bean.setDob(rs.getDate(5));
+			
+		}
+		return list;
+		
+		
+		
+		
 	}
 
 	

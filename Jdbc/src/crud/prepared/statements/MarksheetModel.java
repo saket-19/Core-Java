@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MarksheetModel {
 	public void add(MarksheetBean bean) throws ClassNotFoundException, SQLException {
@@ -81,6 +83,32 @@ public class MarksheetModel {
 		}
 		
 		return bean;
+		
+	}
+	public List search() throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/people","root","root");
+		PreparedStatement pstmt=conn.prepareStatement("select * from st_Marksheet");
+		ResultSet rs=pstmt.executeQuery();
+		MarksheetBean bean=null;
+		List list=new ArrayList();
+		
+		while(rs.next()) {
+			bean=new MarksheetBean();
+			bean.setId(rs.getInt(1));
+			bean.setRollno(rs.getInt(2));
+			bean.setName(rs.getString(3));
+			bean.setPhy(rs.getInt(4));
+			bean.setChem(rs.getInt(5));
+			bean.setMaths(rs.getInt(6));
+			
+		}
+		return list;
+		
+		
+		
+		
+		
 		
 	}
 	
